@@ -99,7 +99,7 @@
       formData.append("passwort", this.in_pw);
       formData.append("user_content", this.in_con);
 
-      fetch("http://localhost/test/register.php", 
+      fetch("https://durdyyeva.com/social_media_php/register.php",  //http://localhost/test/register.php
       {
         method: 'POST',
         mode: 'cors',

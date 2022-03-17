@@ -74,7 +74,7 @@
               formData.append("id", "error");
             }
             
-            fetch("http://localhost/test/index.php", 
+            fetch("https://durdyyeva.com/social_media_php/index.php", 
             {
                 method: 'POST',
                 mode: 'cors',
@@ -100,7 +100,7 @@
           formData.append("post_content", this.post_content);
           formData.append("token", this.token);
           console.log(this.token);
-          fetch("http://localhost/test/post_share.php", 
+          fetch("https://durdyyeva.com/social_media_php/post_share.php",    //http://localhost/test/post_share.php
             {
                 method: 'POST',
                 mode: 'cors',

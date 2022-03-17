@@ -34,7 +34,7 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("http://localhost/test/abonnieren.php", 
+            fetch("https://durdyyeva.com/social_media_php/abonnieren.php", //http://localhost/test/abonnieren.php
             {
                 method: 'POST',
                 mode: 'cors',

@@ -50,7 +50,7 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("http://localhost/test/mypost.php", 
+            fetch("https://durdyyeva.com/social_media_php/mypost.php", //http://localhost/test/mypost.php
             {
                 method: 'POST',
                 mode: 'cors',
