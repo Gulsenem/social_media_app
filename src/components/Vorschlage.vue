@@ -73,7 +73,7 @@ export default {
                 formData.append("token", this.token);
                 formData.append("user_it", a);
 
-                fetch("https://socialmedia.durdyyeva.com/social_media_php/meselem.php",    //http://localhost/test/post_share.php
+                fetch("https://socialmedia.durdyyeva.com/social_media_php/add_follow_list.php",    //http://localhost/test/post_share.php
             {
                 method: 'POST',
                 mode: 'cors',
