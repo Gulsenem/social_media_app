@@ -7,7 +7,7 @@
                 <b> {{a.username}} </b> <br>
                 <small> <b style="color:#63a9df;"> {{a.aboname}} </b>  followed this</small>
             </div>
-            <button><i class="fas fa-plus"></i></button>
+            <button @click="add_follow_list(a.username)"><i class="fas fa-plus"></i></button>
         </div>
         
 
@@ -39,7 +39,7 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("https://durdyyeva.com/social_media_php/vorschlage.php", //http://localhost/test/vorschlage.php
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/vorschlage.php", //http://localhost/test/vorschlage.php
             {
                 method: 'POST',
                 mode: 'cors',
@@ -62,6 +62,42 @@ export default {
                 console.log(" finally");
             });
             //" v-for="a in abonent" v-bind:key="a.username">
+    },
+
+    methods:{
+        add_follow_list(a){
+            console.log("Cliked:  " + a);
+
+                this.token = document.cookie.split("=")[1];
+                const formData = new FormData();
+                formData.append("token", this.token);
+                formData.append("user_it", a);
+
+                fetch("https://socialmedia.durdyyeva.com/social_media_php/meselem.php",    //http://localhost/test/post_share.php
+            {
+                method: 'POST',
+                mode: 'cors',
+                body: formData
+            })
+            .then(cevap => cevap.json())
+            .then(sonuc => {
+                if(sonuc.basarili == "0")
+                {
+                  console.log("add_follow_liste hataly");
+                }
+                else
+                {
+                  console.log("add_follow_liste basarili");
+                  
+                }
+
+            })
+          .finally(() =>
+              {
+                console.log("add_follow_liste finally");
+              });
+                
+        }
     }
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
     <div class="paylasimlar">
-    <h4>Paylasimlar</h4>
+    <h4>My Posts</h4>
     <div class="box" v-for="p in paylasim" v-bind:key="p.name">
         <div class="user_image">
             <img src="../assets/woman.png" >
             <span>{{p.name}} </span>
         </div>
         <div class="content">
-            {{p.content}}
+            " {{p.content}} "  
 
         </div>
         <div class="content_unten">
@@ -50,7 +50,7 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("https://durdyyeva.com/social_media_php/mypost.php", //http://localhost/test/mypost.php
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/mypost.php", //http://localhost/test/mypost.php
             {
                 method: 'POST',
                 mode: 'cors',

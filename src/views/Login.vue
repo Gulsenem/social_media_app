@@ -43,8 +43,8 @@
             const formData = new FormData();
             formData.append("email", this.input_email);
             formData.append("passwort", this.input_pass);  
-
-            fetch("https://durdyyeva.com/social_media_php/login.php", //http://localhost/test/login.php
+            
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/login.php", //  http://localhost/test/login.php     
             {
                 method: 'POST',
                 mode: 'cors',

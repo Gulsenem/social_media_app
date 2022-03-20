@@ -2,7 +2,7 @@
     <div>
         <header>
       <div class="wrapper sp_btw">
-          <div class="logo">Senem.</div>
+          <div class="logo"><b>Senem.</b></div>
           <div class="search sp_btw" >
               <input type="text" placeholder="Search">
               <i class="fal fa-search"></i>

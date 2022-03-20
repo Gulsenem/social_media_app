@@ -107,10 +107,12 @@ header .search i
     border-radius: 0 10px 10px 0;
     color:white;
 }
+
 #nav a, header a
 {
     color: #013a66;
     margin-left: 15px;
+    
 }
 #nav a:hover
 {
@@ -122,10 +124,7 @@ header #nav a i
     margin-right: 6px;
     font-size: 1.2em;
 }
-header #nav a:hover
-{
-    border-bottom: 3px solid black;
-}
+
  #nav router-link-exact-active
 {
     border-bottom: 3px solid black;

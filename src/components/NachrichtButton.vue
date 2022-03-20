@@ -1,8 +1,23 @@
 <template>
     <div class="nachrichten">
-        <button><i class="far fa-comments"></i> </button> 
+        
+
+
+        <button @click="nachrichtBtn"><i class="far fa-comments"></i> </button> 
+
     </div>
 </template>
+<script>
+export default {
+    methods:
+    {
+        nachrichtBtn()
+        {
+            alert("funktioenirt");
+        }
+    }
+}
+</script>
 
 <style scoped>
     .nachrichten
@@ -12,7 +27,7 @@
         justify-content: right;
     }
 
-    .nachrichten button
+    .nachrichten >button
     {
         width: 80px;
         height:80px;
@@ -30,4 +45,6 @@
 
         
     }
+
+
 </style>

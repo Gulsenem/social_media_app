@@ -1,13 +1,13 @@
 <template>
     <div class="paylasimlar">
-    <h4>Paylasimlar</h4>
+    <h4>Posts</h4>
     <div class="box" v-for="p in paylasim" v-bind:key="p.name">
         <div class="user_image">
             <img src="../assets/woman.png" >
-            <span>{{p.name}} </span>
+            <span>{{p.name}} </span> <pre><i> geteilt um {{p.time}} :</i></pre> 
         </div>
         <div class="content">
-            {{p.content}}
+           " {{p.content}} " 
 
         </div>
         <div class="content_unten">
@@ -33,6 +33,7 @@ export default {
         return{
             paylasim: [
                 {
+                    time:"",
                     name: "",
                     content: "",
                     likeZahl: "",
@@ -50,7 +51,7 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("https://durdyyeva.com/social_media_php/allpost.php", //http://localhost/test/allpost.php
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/allpost.php", //http://localhost/test/allpost.php
             {
                 method: 'POST',
                 mode: 'cors',
@@ -66,10 +67,13 @@ export default {
                 }
                 else
                 {
-                     this.$delete(this.paylasim, 0)           
+                    console.log("paylasim ALL ELSE");
+                    console.log(sonuc);
+                     this.$delete(this.paylasim, 0);           
                     for(let i=0;  i<sonuc[0].length; i++) {    
                        // console.log(sonuc[0][i].post_content, sonuc[1][i].username);  
-                        this.paylasim.push({content : sonuc[0][i].post_content, name : sonuc[1][i].username });//sonuc[1];                  
+                        this.paylasim.push({content : sonuc[0][i].post_content, name : sonuc[1][i].username, time : sonuc[0][i].post_tarih });//sonuc[1];  
+                        console.log(sonuc[0][i].post_content, sonuc[0][i].post_tarih);              
                         //this.paylasim.content = sonuc[0][i].post_content;
                        // this.paylasim[0].content = sonuc[0][i].post_content;
                        // this.paylasim[0].name = sonuc[1][i].username;
@@ -82,7 +86,7 @@ export default {
             })
             .finally(() =>
             {
-                //console.log(" finally");
+                console.log("PAYLASIM ALL finally");
             });
     }
 }

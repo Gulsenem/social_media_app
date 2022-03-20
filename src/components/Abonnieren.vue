@@ -34,10 +34,10 @@ export default {
         const formData = new FormData();
         formData.append("token", this.token);
 
-            fetch("https://durdyyeva.com/social_media_php/abonnieren.php", //http://localhost/test/abonnieren.php
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/abonnieren.php",
             {
                 method: 'POST',
-                mode: 'cors',
+                mode: 'no-cors',
                 body: formData
             })
             .then(cevap => cevap.json())
@@ -54,6 +54,8 @@ export default {
             {
                 console.log(" finally");
             });
+  /*             
+*/
             //" v-for="a in abonent" v-bind:key="a.username">
     }
 }

@@ -12,7 +12,7 @@
           <div class="teilen">
             <div class="user_image">
                 <img src="../assets/woman.png" >
-                <textarea placeholder="Was machst du gerade, Ogulsenem ?" v-model="post_content"></textarea>
+                <textarea placeholder="Was machst du gerade?" v-model="post_content"></textarea>
             </div>
             <button @click="teilen">Teilen</button>
           </div>
@@ -74,15 +74,15 @@
               formData.append("id", "error");
             }
             
-            fetch("https://durdyyeva.com/social_media_php/index.php", 
+            fetch("https://socialmedia.durdyyeva.com/social_media_php/index.php", 
             {
                 method: 'POST',
-                mode: 'cors',
+                mode: 'no-cors',
                 body: formData
             })
             .then(cevap => cevap.json())
             .then(sonuc => {
-                //console.log("sonuc:"+sonuc.basarili);
+                console.log("sonuc:"+sonuc.basarili);
                 if(sonuc.basarili == "0")
                 {
                   this.$router.push('/login');
@@ -100,7 +100,7 @@
           formData.append("post_content", this.post_content);
           formData.append("token", this.token);
           console.log(this.token);
-          fetch("https://durdyyeva.com/social_media_php/post_share.php",    //http://localhost/test/post_share.php
+          fetch("https://socialmedia.durdyyeva.com/social_media_php/post_share.php",    //http://localhost/test/post_share.php
             {
                 method: 'POST',
                 mode: 'cors',
